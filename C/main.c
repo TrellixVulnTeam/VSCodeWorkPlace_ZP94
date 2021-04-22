@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include "DataStructure/List/seqList/seqList.h"
-#include "DataStructure/List/linkList/linkList.h"
+#include "DataStructure/List/SeqList/SeqList.h"
+#include "DataStructure/List/LinkList/LinkList.h"
+#include "DataStructure/Stack/SeqStack/SeqStack.h"
+#include "DataStructure/Stack/LinkStack/LinkStack.h"
 
 //顺序表测试
 void SeqListTest()
@@ -71,22 +73,84 @@ void LinkListTest()
     printf("销毁成功！\n");
 }
 
+//顺序栈测试函数
+void SeqStackTest()
+{
+    SStack stack = (SStack)malloc(sizeof(SStack));
+    printf("初始化顺序栈中…\n");
+    SStack_Init(stack);
+    printf("初始化成功，此时栈是否为空?%c\n",SStack_Empty(stack)?'Y':'N');
+    printf("正在对栈进行0~20的Push\n");
+    for (int i = 0; i <= 20; i++)
+    {
+        if(!SStack_Push(stack,i)) {
+            printf("在Push%d的时候失败\n",i);
+            break;
+        }
+    }
+    printf("已全部Push完毕!\n");
+    printf("此时栈是否为空?%c\n",SStack_Empty(stack)?'Y':'N');
+    printf("此时栈顶元素为%d\n",SStack_GetTop(stack));
+    printf("开始Pop,如下\n[");
+    int pop;
+    while(SStack_Pop(stack,&pop))
+    {
+        printf(" %d",pop);
+    }
+    printf(" ]\n已经全部Pop成功!正在退出…\n");
+}
+
+//链栈测试函数
+void LinkStackTest()
+{
+    printf("初始化链栈中…\n");
+    LStack stack = LStack_Init(stack);
+    printf("初始化成功，此时栈是否为空?%c\n",LStack_Empty(stack)?'Y':'N');
+    printf("正在对栈进行0~20的Push\n");
+    for (int i = 1; i <= 10; i++)
+    {
+        if(!LStack_Push(stack,i)) {
+            printf("在Push%d的时候失败\n",i);
+            break;
+        }
+    }
+    printf("已全部Push完毕!\n");
+    printf("此时栈是否为空?%c\n",LStack_Empty(stack)?'Y':'N');
+    printf("此时栈顶元素为%d\n",LStack_GetTop(stack)->data);
+    printf("开始Pop,如下\n[");
+    int pop;
+    while(LStack_Pop(stack,&pop))
+    {
+        printf(" %d",pop);
+    }
+    printf(" ]\n已经全部Pop成功!正在退出…\n");
+    //free(stack);//此处不释放
+}
+
 int main()
 {
     int sel;
-    printf("请输入一个测试项:(1:SeqList 2:LinkList 3:…)\n");
+    printf("请输入一个测试项:(11:SeqList\t12:LinkList\t21:SeqStack\t22:LinkStack\tothers:exit)\n");
     while(scanf("%d",&sel))
     {
         switch (sel)
         {
-        case 1:
+        case 11:
             SeqListTest();
             break;
         
-        case 2:
+        case 12:
             LinkListTest();
             break;
         
+        case 21:
+            SeqStackTest();
+            break;
+        
+        case 22:
+            LinkStackTest();
+            break;
+
         default:
             printf("输个p，根本就没有");
             continue;

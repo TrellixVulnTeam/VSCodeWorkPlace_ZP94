@@ -1,7 +1,8 @@
 {
     "git.ignoreLimitWarning": true,
     "files.associations": {
-        "linklist.h": "c"
+        "linklist.h": "c",
+        "seqstack.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/."
 }

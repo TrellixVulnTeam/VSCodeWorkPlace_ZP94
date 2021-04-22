@@ -7,8 +7,10 @@ enable_testing()
 
 set(SOURCES
     main.c
-    DataStructure/List/seqList/seqList.c
-    DataStructure/List/LinkList/linkList.c
+    DataStructure/List/SeqList/SeqList.c
+    DataStructure/List/LinkList/LinkList.c
+    DataStructure/Stack/SeqStack/SeqStack.c
+    DataStructure/Stack/LinkStack/LinkStack.c
 )
 
 #生成的可执行文件
