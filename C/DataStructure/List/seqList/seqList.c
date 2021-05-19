@@ -1,6 +1,5 @@
+#include "../../global_inc.h"
 #include "seqList.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 //初始化表
 bool InitList(SList* l){

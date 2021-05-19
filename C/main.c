@@ -3,6 +3,8 @@
 #include "DataStructure/List/LinkList/LinkList.h"
 #include "DataStructure/Stack/SeqStack/SeqStack.h"
 #include "DataStructure/Stack/LinkStack/LinkStack.h"
+#include "DataStructure/Queue/LinkQueue/LinkQueue.h"
+#include "DataStructure/Queue/SeqQueue/SeqQueue.h"
 
 //顺序表测试
 void SeqListTest()
@@ -127,10 +129,60 @@ void LinkStackTest()
     //free(stack);//此处不释放
 }
 
+void LinkQueueTest()
+{
+    printf("链式队列初始化中…\n");
+    LQueue q = LQueue_Init();
+    printf("链式队列是否为空?%c\n",LQueue_Empty(q)?'Y':'N');
+    printf("入队1~10");
+    for(int i = 1;i<=10;i++)
+    {
+        LQueue_EnQueue(q,i);
+    }
+    printf("链式队列是否为空?%c\n",LQueue_Empty(q)?'Y':'N');
+    printf("此时队头元素为%d\n",LQueue_GetHead(q));
+    printf("出队[ ");
+    int deInt;
+    while(!LQueue_Empty(q))
+    {
+        LQueue_DeQueue(q,&deInt);
+        printf("%d ",deInt);
+    }
+    printf("]\n");
+    printf("链式队列是否为空?%c\n",LQueue_Empty(q)?'Y':'N');
+}
+
+void SeqQueueTest()
+{
+    printf("顺序队列初始化中…\n");
+    SQueue q;
+    if(!SQueue_Init(&q)){
+        printf("顺序队列初始化失败,正在退出…\n");
+        return;
+    }
+    printf("顺序队列是否为空?%c\n",SQueue_Empty(q)?'Y':'N');
+    printf("入队1~10");
+    for(int i = 1;i<=10;i++)
+    {
+        SQueue_EnQueue(&q,i);
+    }
+    printf("顺序队列是否为空?%c\n",SQueue_Empty(q)?'Y':'N');
+    printf("此时队头元素为%d\n",SQueue_GetHead(q));
+    printf("出队[ ");
+    int deInt;
+    while(!SQueue_Empty(q))
+    {
+        SQueue_DeQueue(&q,&deInt);
+        printf("%d ",deInt);
+    }
+    printf("]\n");
+    printf("顺序队列是否为空?%c\n",SQueue_Empty(q)?'Y':'N');
+}
+
 int main()
 {
     int sel;
-    printf("请输入一个测试项:(11:SeqList\t12:LinkList\t21:SeqStack\t22:LinkStack\tothers:exit)\n");
+    printf("请输入一个测试项:(11:SeqList\t12:LinkList\t21:SeqStack\t22:LinkStack\t31:LinkQueue\t32:SeqQueue\tothers:exit)\n");
     while(scanf("%d",&sel))
     {
         switch (sel)
@@ -149,6 +201,14 @@ int main()
         
         case 22:
             LinkStackTest();
+            break;
+
+        case 31:
+            LinkQueueTest();
+            break;
+
+        case 32:
+            SeqQueueTest();
             break;
 
         default:

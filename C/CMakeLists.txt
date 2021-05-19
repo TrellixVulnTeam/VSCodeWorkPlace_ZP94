@@ -11,6 +11,8 @@ set(SOURCES
     DataStructure/List/LinkList/LinkList.c
     DataStructure/Stack/SeqStack/SeqStack.c
     DataStructure/Stack/LinkStack/LinkStack.c
+    DataStructure/Queue/LinkQueue/LinkQueue.c
+    DataStructure/Queue/SeqQueue/SeqQueue.c
 )
 
 #生成的可执行文件

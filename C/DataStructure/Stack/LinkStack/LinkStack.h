@@ -2,7 +2,6 @@
 #define LINKSTACK_H
 
 #include "../../global_var.h"
-#include <stdlib.h>
 
 typedef struct _LSTACK{
     int data;

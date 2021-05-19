@@ -2,7 +2,9 @@
     "git.ignoreLimitWarning": true,
     "files.associations": {
         "linklist.h": "c",
-        "seqstack.h": "c"
+        "seqstack.h": "c",
+        "string_view": "c",
+        "seqqueue.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/."
 }

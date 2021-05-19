@@ -1,3 +1,4 @@
+#include "../../global_inc.h"
 #include "SeqStack.h"
 
 //顺序栈初始化

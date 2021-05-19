@@ -1,5 +1,5 @@
-CMakeFiles/main.dir/DataStructure/List/LinkList/LinkList.c.obj: \
- C:\Workplace\C\DataStructure\List\LinkList\LinkList.c \
+CMakeFiles/main.dir/DataStructure/Queue/LinkQueue/LinkQueue.c.obj: \
+ C:\Workplace\C\DataStructure\Queue\LinkQueue\LinkQueue.c \
  C:/Workplace/C/DataStructure/global_inc.h \
  C:/Workplace/MinGW/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  C:/Workplace/MinGW/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -20,5 +20,5 @@ CMakeFiles/main.dir/DataStructure/List/LinkList/LinkList.c.obj: \
  C:/Workplace/MinGW/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
  C:/Workplace/MinGW/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
  C:/Workplace/MinGW/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h \
- C:\Workplace\C\DataStructure\List\LinkList\linkList.h \
+ C:\Workplace\C\DataStructure\Queue\LinkQueue\LinkQueue.h \
  C:/Workplace/C/DataStructure/global_var.h

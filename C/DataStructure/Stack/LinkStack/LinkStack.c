@@ -1,3 +1,4 @@
+#include "../../global_inc.h"
 #include "LinkStack.h"
 
 //链栈初始化

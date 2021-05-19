@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "../../global_inc.h"
 #include "linkList.h"
 
 //初始化链表

@@ -2,7 +2,6 @@
 #define LINKLIST_H
 
 #include "../../global_var.h"
-#define maxSize 100
 
 typedef struct _LNode{
     int data;
