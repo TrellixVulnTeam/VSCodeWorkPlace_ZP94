@@ -1,10 +1,5 @@
 #include <stdio.h>
-#include "DataStructure/List/SeqList/SeqList.h"
-#include "DataStructure/List/LinkList/LinkList.h"
-#include "DataStructure/Stack/SeqStack/SeqStack.h"
-#include "DataStructure/Stack/LinkStack/LinkStack.h"
-#include "DataStructure/Queue/LinkQueue/LinkQueue.h"
-#include "DataStructure/Queue/SeqQueue/SeqQueue.h"
+#include "DataStructure/global_head.h"
 
 //顺序表测试
 void SeqListTest()
@@ -129,6 +124,7 @@ void LinkStackTest()
     //free(stack);//此处不释放
 }
 
+//链式队列测试函数
 void LinkQueueTest()
 {
     printf("链式队列初始化中…\n");
@@ -152,6 +148,7 @@ void LinkQueueTest()
     printf("链式队列是否为空?%c\n",LQueue_Empty(q)?'Y':'N');
 }
 
+//顺序队列测试函数
 void SeqQueueTest()
 {
     printf("顺序队列初始化中…\n");
@@ -179,10 +176,37 @@ void SeqQueueTest()
     printf("顺序队列是否为空?%c\n",SQueue_Empty(q)?'Y':'N');
 }
 
+//顺序字符串测试函数
+void SStringTest()
+{
+    SString ss1;
+    SString_ClearString(&ss1);
+    printf("将'asdfg'插入到ss1\n");
+    SString_StrAssign(&ss1,"asdfg");
+    SString ss2;
+    printf("复制ss1的值到ss2\n");
+    SString_Copy(&ss2,ss1);
+    printf("此时ss2是否为空?%c\n",SString_Empty(ss2)?'Y':'N');
+    printf("将'hjkl'插入到ss2后\n");
+    SString_Concat(&ss2,ss2,SString_CToSS("hjkl"));
+    int compared = SString_StrCompare(ss1,ss2);
+    printf("ss1和ss2相比谁更大?%s\n",compared>0?"ss1":compared<0?"ss2":"相等");
+    compared = SString_StrCompare(ss1,ss1);
+    printf("ss1和ss1谁更大?%s\n",compared>0?"前一个ss1":compared<0?"后一个ss1":"相等");
+    printf("此时ss2的长度为%d\n",SString_Length(ss2));
+    printf(SString_SSToC(SString_SubString(ss2,1,5)));
+    printf("ss2当中sdf的下标为？(若无则传0)%d\n",SString_Index(ss2,SString_CToSS("sdf")));
+    printf("清除ss1…\n");
+    SString_ClearString(&ss1);
+    printf("销毁ss1…");
+    SString_DestroyString(&ss1);
+}
+
 int main()
 {
     int sel;
-    printf("请输入一个测试项:(11:SeqList\t12:LinkList\t21:SeqStack\t22:LinkStack\t31:LinkQueue\t32:SeqQueue\tothers:exit)\n");
+    printf("请输入一个测试项:(11:SeqList\t12:LinkList\t21:SeqStack\t22:LinkStack\t31:LinkQueue\t32:SeqQueue\n");
+    printf("41:SeqString\tothers:exit)\n");
     while(scanf("%d",&sel))
     {
         switch (sel)
@@ -209,6 +233,10 @@ int main()
 
         case 32:
             SeqQueueTest();
+            break;
+
+        case 41:
+            SStringTest();
             break;
 
         default:

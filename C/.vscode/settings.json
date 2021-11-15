@@ -4,7 +4,11 @@
         "linklist.h": "c",
         "seqstack.h": "c",
         "string_view": "c",
-        "seqqueue.h": "c"
+        "seqqueue.h": "c",
+        "linkstack.h": "c",
+        "array": "c",
+        "string": "c",
+        "*.tcc": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/."
 }

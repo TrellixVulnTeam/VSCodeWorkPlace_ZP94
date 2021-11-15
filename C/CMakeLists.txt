@@ -13,6 +13,8 @@ set(SOURCES
     DataStructure/Stack/LinkStack/LinkStack.c
     DataStructure/Queue/LinkQueue/LinkQueue.c
     DataStructure/Queue/SeqQueue/SeqQueue.c
+    DataStructure/STRING/SeqString/SeqString.c
+    DataStructure/Tree/BinaryTree/BTree.c
 )
 
 #生成的可执行文件
